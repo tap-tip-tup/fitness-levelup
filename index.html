@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSCA-CPT クイズゲーム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen" class="screen active">
+            <h1>NSCA-CPT 対策クイズ</h1>
+            <div class="course-selection">
+                <h2>難易度で選ぶ</h2>
+                <div class="btn-group">
+                    <button class="course-btn" data-type="difficulty" data-value="初級">初級</button>
+                    <button class="course-btn" data-type="difficulty" data-value="中級">中級</button>
+                    <button class="course-btn" data-type="difficulty" data-value="上級">上級</button>
+                </div>
+            </div>
+            <div class="course-selection">
+                <h2>カテゴリーで選ぶ</h2>
+                <div class="btn-group" id="category-buttons">
+                    <!-- カテゴリーボタンはJSで動的に生成 -->
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div id="quiz-header">
+                <h2 id="quiz-title">クイズ</h2>
+            </div>
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <h3 id="question">ここに問題文が入ります</h3>
+            <div id="answer-buttons" class="btn-grid">
+                <!-- 回答ボタンはJSで動的に生成 -->
+            </div>
+            <div id="feedback"></div>
+            <div id="explanation-container" class="hide">
+                <h4>解説</h4>
+                <p id="explanation"></p>
+            </div>
+            <div id="quiz-controls" class="hide">
+                <button id="quit-btn">クイズを中断</button>
+                <button id="next-btn">次の問題へ</button>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <h2>結果発表</h2>
+            <p>あなたのスコアは <span id="score">0</span> 点です。</p>
+            <button id="restart-btn">コース選択に戻る</button>
+        </div>
+    </div>
+    <!-- 分割した問題ファイルを読み込む -->
+    <script src="questions_technique.js"></script>
+    <script src="questions_design.js"></script>
+    <script src="questions_nutrition.js"></script>
+    <script src="questions_safety.js"></script>
+    
+    <!-- メインのスクリプト -->
+    <script src="script.js"></script>
+</body>
+</html>
